@@ -4,13 +4,169 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/jquery.fancybox.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
 	<title>YarLand2</title>
 </head>
 <body>
 	<header>
-		
+		<div class="container">
+			<div class="contain">
+				<div class="top">
+					<div class="logo">Travel</div>
+					<nav>
+						<div class="hamburger">
+							<div class="line"></div>
+							<div class="line"></div>
+							<div class="line"></div>
+						</div>
+						<ul class="nav-links">
+							<li><a href="#">HOME</a></li>
+							<li><a href="#">ABOUT</a></li>
+							<li><a href="#">SERVICES</a></li>
+							<li><a href="#">GALLERY</a></li>
+							<li><a href="#">CONTACT</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="headContent">
+					<div class="sloganBlock">
+						<div class="slogan">TRAVEL IS<br>BEAUTIFUL</div>
+						<div class="sloganText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+					</div>
+					<form action="#" class="form">
+						<h4>REQUEST A QUOTE</h4>
+						<input type="text" name="name" id="name" placeholder="Full Name" required>
+						<input type="email" name="email" id="email" placeholder="Email Adress" required>
+						<input type="tel" name="tel" id="phone" placeholder="Phone Number" required>
+						<input type="text" name="country" id="country" placeholder="Country" required>
+						<p class="pForm"><input type="checkbox" name="accept" id="accept" required>I accept the terms & conditions</p>
+						<button class="btnForm" type="submit">SEND</button>
+					</form>
+				</div>
+			</div>
+		</div>
 	</header>
-	<script src="/jquery/jquery-3.5.0.js"></script>
+	<section class="sec1">
+		<div class="container">
+			<div class="contain">
+				<div class="block1">
+					<span class="our">OUR</span>
+					<span class="services">SEVICES</span>
+				</div>
+				<div class="block2">
+					<div class="serveBlock">
+						<img src="./assets/icons/hrz.jpg" alt="hrz">
+						<div class="serveText">Making your trip beautiful and easier</div>
+					</div>
+					<div class="serveBlock">
+						<img src="./assets/icons/tool.jpg" alt="tool">
+						<div class="serveText">Tools to help you succeed tommorow</div>
+					</div>
+					<div class="serveBlock">
+						<img src="./assets/icons/bulb.jpg" alt="bulb">
+						<div class="serveText">Ideas that will blow you out the blue.</div>
+					</div>
+					<div class="serveBlock">
+						<img src="./assets/icons/gps.jpg" alt="gps">
+						<div class="serveText">Navigate your path to beautiful world.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="block3">
+			<div class="container">
+				<div class="contain">
+					<div class="story">
+						<div class="storyText">We are in business for over 6 years providing amazing services to client and people love them to the core. View our story to know more.</div>
+						<button class="storyBtn">OUR STORY</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="sec2">
+		<div class="container">
+			<div class="contain">
+				<div class="priceTitle">PRICING</div>
+				<div class="priceBlock">
+					<div class="priceBlockTitle">Starter</div>
+					<div class="pricePrice">FREE</div>
+					<p class="pPrice">Free Service</p>
+					<p class="pPrice">Multiple Accounts</p>
+					<p class="pPrice">Management No</p>
+					<p class="pPrice">--</p>
+					<p class="pPrice">--</p>
+					<div class="priceBtn">TRY</div>
+				</div>
+				<div class="priceBlock forCorner">
+					<div class="corner">popular</div>
+					<div class="priceBlockTitle">Business</div>
+					<div class="pricePrice">$97</div>
+					<p class="pPrice">Free Service</p>
+					<p class="pPrice">Multiple Accounts</p>
+					<p class="pPrice">Management No</p>
+					<p class="pPrice">Unlimited Data</p>
+					<p class="pPrice">--</p>
+					<div class="priceBtn">SIGN UP</div>
+				</div>
+				<div class="priceBlock">
+					<div class="priceBlockTitle">Professional</div>
+					<div class="pricePrice">$297</div>
+					<p class="pPrice">Free Service</p>
+					<p class="pPrice">Multiple Accounts</p>
+					<p class="pPrice">Management No</p>
+					<p class="pPrice">Unlimited Data</p>
+					<p class="pPrice">Whatever You Need</p>
+					<div class="priceBtn">SIGN UP</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="sec3">
+		<div class="container">
+			<div class="contain">
+				<div class="testiGal">
+					<div class="testi">
+						<div class="testiTitle">TESTIMONIAL</div>
+						<div class="testiBlock">
+							<img class="testiBlock__Img" src="/assets/portraits/Testimonial_Guy.png"/>
+							<div class="testiBlock__Text">I have been involved with this comapny for ages and just want to say this is a great work by designcoon.</div>
+							<div class="testiBlock__Link"><a href="#">DJ Bravo - Frequent Travelera</a></div>
+						</div>
+						<div class="testiBlock">
+							<img class="testiBlock__Img" src="/assets/portraits/Testimonial_Girl.png"/>
+							<div class="testiBlock__Text">I have been involved with this comapny for ages and just .</div>
+							<div class="testiBlock__Link"><a href="#">DJ Bravo - Frequent Travelera</a></div>
+						</div>
+					</div>
+					<div class="gal">
+						<div class="galTitle">GALLERY</div>
+						<div class="galBlocks">
+							<a data-fancybox="gallery" href="/assets/bPic1.png" class="galBlock"><img src="/assets/Pic1.png" alt="Pic1" class="galImg"></a>
+							<a data-fancybox="gallery" href="/assets/bPic2.png" class="galBlock"><img src="/assets/Pic2.png" alt="Pic2" class="galImg"></a>
+							<a data-fancybox="gallery" href="/assets/bPic3.png" class="galBlock"><img src="/assets/Pic3.png" alt="Pic3" class="galImg"></a>
+							<a data-fancybox="gallery" href="/assets/bPic4.png" class="galBlock"><img src="/assets/Pic4.png" alt="Pic4" class="galImg"></a>
+							<a data-fancybox="gallery" href="/assets/bPic5.png" class="galBlock"><img src="/assets/Pic5.png" alt="Pic5" class="galImg"></a>
+							<a data-fancybox="gallery" href="/assets/bPic6.png" class="galBlock"><img src="/assets/Pic6.png" alt="Pic6" class="galImg"></a>
+						</div>
+						<div class="galMore"><a href="#">VIEW MORE PICTURES</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="contain">
+				<div class="copyRight">All Rights Reserved |  2016  |  Designed with love by <a href="https://www.behance.net/zeetechie">DesignCoon</a></div>
+				<div class="footLogo">Travel</div>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="/jquery/jquery-3.5.0.js"></script>
+	<script type="text/javascript" src="/jquery/jquery.maskedinput.min.js"></script>
+	<script src="jquery/jquery.fancybox.min.js"></script>
+	<script src="script.js"></script>
 </body>
 </html>
