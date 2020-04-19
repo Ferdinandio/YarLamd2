@@ -60,7 +60,7 @@ header:before {
   width: 100%;
   height: 100%;
   background-color: #EBE0CA;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 header {
@@ -372,6 +372,8 @@ header .headContent .form .btnForm:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .sec1 .block3 .story .storyText {
@@ -415,6 +417,10 @@ header .headContent .form .btnForm:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.sec2 .container {
+  margin: 0;
 }
 
 .sec2 .priceTitle {
@@ -709,6 +715,7 @@ footer .contain {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 10px;
 }
 
 footer .copyRight {
@@ -832,7 +839,7 @@ footer .footLogo {
     z-index: 3;
   }
   .nav-links {
-    top: 0;
+    top: -800px;
     left: 0;
     position: fixed;
     background: rgba(255, 255, 255, 0.7);
@@ -842,15 +849,13 @@ footer .footLogo {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    clip-path: circle(0 at 90% -10%);
-    -webkit-clip-path: circle(0 at 90% -10%);
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
     pointer-events: none;
+    opacity: 1;
   }
   .nav-links.open {
-    clip-path: circle(1000px at 90% -10%);
-    -webkit-clip-path: circle(1000px at 90% -10%);
+    top: 0;
     pointer-events: all;
   }
   .landing {
