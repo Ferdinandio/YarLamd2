@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap')
+
 body
 	min-width: 320px
+	overflow-x: hidden
 *
 	margin: 0
 	padding: 0
 	text-align: center
 	box-sizing: border-box
 	font-family: Montserrat
+	outline: none
 .bgr
 	width: 100%
 	position: absolute
@@ -44,9 +49,12 @@ body
 	justify-content: center
 	// height: 100%
 
-$clr1: #d03958
+$clr1: rgb(208, 57, 88)
 $clr2: #161616
 $clr3: #e3d5b8
+
+
+
 
 header:before
 	position: absolute
@@ -55,17 +63,17 @@ header:before
 	left: 0
 	width: 100%
 	height: 100%
-	background-color: #EBE0CA
-	opacity: 0.8
-	
+	background: #EBE0CA
+	opacity: 0.75
+
+
+
 header
 	position: relative
 	width: 100%
 	min-height: 688px
-	background-image: url("/assets/Group_1.png")
+	background: url("../assets/Group_1.png") no-repeat center
 	background-attachment: fixed
-	background-repeat: no-repeat
-	background-position: center
 	background-size: cover
 	.top
 		width: 100%
@@ -76,19 +84,39 @@ header
 		.logo
 			width: 135px
 			height: 63px
-			color: $clr1
-			font-family: "Quite Chocolatey"
-			font-size: 88px
-			font-weight: 400
-			line-height: 88px
-			letter-spacing: -1.2px
-			display: flex
-			opacity: 0.99
+			z-index: 1
+			img
+				width: 135px
+				height: 63px
+		.burger, .active
+			position: absolute
+			top: 10px
+			width: 30px
+			height: 3px
+			background: $clr2
+			opacity: 0
+			transition: 500ms
+		.burger:after, .active:after
+			content: ""
+			position: absolute
+			top: -10px
+			right: 0
+			width: 30px
+			height: 3px
+			background-color: $clr2
+		.burger:before, .active:before
+			content: ""
+			position: absolute
+			top: 10px
+			right: 0
+			width: 30px
+			height: 3px
+			background-color: $clr2
 		nav
-			width: 100%
+			width: 70%
 			height: 10vh
-			z-index: 2
-			.nav-links 
+			z-index: 1
+			.nav-links
 				display: flex
 				list-style: none
 				width: 100%
@@ -96,7 +124,6 @@ header
 				justify-content: flex-end
 				align-items: center
 				margin-left: auto
-				z-index: 2
 				li a
 					padding: 10px
 					margin-left: 7px
@@ -118,15 +145,15 @@ header
 		width: 100%
 		min-height: 548px
 		display: flex
-		flex-wrap: wrap
 		justify-content: space-between
 		align-items: center
-		z-index: 1
+		// z-index: 1
 		.sloganBlock
 			width: 470px
 			height: 268px
 			margin-right: 25px
 			color: $clr2
+			opacity: 0.99
 			.slogan
 				font-size: 80px
 				font-weight: 700
@@ -134,6 +161,7 @@ header
 				letter-spacing: -1.8px
 				margin-bottom: 30px
 				text-align: left
+				opacity: 0.99
 			.slogan:first-line
 				color: $clr1
 			.sloganText
@@ -160,21 +188,55 @@ header
 				font-weight: 400
 				letter-spacing: -0.44px
 				margin-top: 25px
-			.pForm
-				color: #ffffff
-				font-family: "PT Serif"
-				font-size: 20px
-				font-weight: 400
-				line-height: 25px
-				letter-spacing: -0.4px
-				display: flex
-				align-items: center
+			.checkBox
 				width: 88%
-			.pForm>input
-				width: 19px;
-				height: 18px;
-				margin-right: 30px
-			#name, #email, #phone, #country
+				input[type="checkbox"]:checked, input[type="checkbox"]:not(:checked)
+					position: absolute
+					margin-left: -9999px
+				input[type="checkbox"]:checked + label, input[type="checkbox"]:not(:checked) + label
+					display: inline-block
+					position: relative
+					padding-left: 28px
+					line-height: 20px
+					cursor: pointer
+				input[type="checkbox"]:checked + label:before, input[type="checkbox"]:not(:checked) + label:before
+					content: ""
+					position: absolute
+					left: 0px
+					top: 0px
+					width: 18px
+					height: 18px
+					border: 2px solid #723838
+					background-color: #e7dada
+				input[type="checkbox"]:checked + label:before, input[type="checkbox"]:not(:checked) + label:before
+    			border-radius: 7px
+				input[type="checkbox"]:checked + label:after, input[type="checkbox"]:not(:checked) + label:after
+					content: ""
+					position: absolute
+				input[type="checkbox"]:checked + label:after, input[type="checkbox"]:not(:checked) + label:after
+					left: 4px
+					top: 5px
+					width: 10px
+					height: 5px
+					border-radius: 1px
+					border-left: 4px solid $clr1
+					border-bottom: 4px solid $clr1
+					transform: rotate(-45deg)
+				input[type="checkbox"]:not(:checked) + label:after
+					opacity: 0
+				input[type="checkbox"]:checked + label:after
+					opacity: 1
+				label
+					color: #ffffff
+					font-family: "PT Serif"
+					font-size: 20px
+					font-weight: 400
+					line-height: 25px
+					letter-spacing: -0.4px
+					display: flex
+					align-items: center
+					width: 90%
+			.inputs
 				width: 88%
 				height: 57px
 				background-color: #ffffff
@@ -196,6 +258,7 @@ header
 				letter-spacing: -0.44px
 				border-radius: 5px
 				margin-bottom: 30px
+				border: none
 			.btnForm:hover
 				cursor: pointer
 				box-shadow: 0 0 5px 2px $clr3
@@ -232,6 +295,13 @@ header
 			flex-wrap: wrap
 			align-content: space-around
 			justify-content: center
+			.imgWrap
+				width: 160px
+				height: 160px
+				overflow: hidden
+				img
+					width: 160px
+					height: 160px
 			.serveText
 				width: 180px
 				color: $clr2
@@ -246,38 +316,42 @@ header
 		min-height: 120px
 		display: flex
 		align-items: center
-		.story
-			width: 100%
-			display: flex
-			flex-wrap: wrap
-			justify-content: space-between
-			align-content: space-around
-			align-items: center
-			margin-top: 10px
-			margin-bottom: 10px
-			.storyText
-				width: 600px
-				color: #ffffff
-				font-family: "PT Serif"
-				font-size: 20px
-				font-weight: 400
-				line-height: 28px
-				letter-spacing: -0.4px
-				text-align: left
-			.storyBtn
-				width: 269px;
-				height: 64px;
-				background-color: $clr3;
-				border-radius: 5px
-				color: $clr2
-				font-family: Montserrat
-				font-size: 22px
-				font-weight: 400
-				line-height: 28px
-				letter-spacing: -0.44px
-			.storyBtn:hover
-				cursor: pointer
-				box-shadow: 0 0 5px 2px $clr3
+		.container
+			min-height: 120px
+			.contain
+				min-height: 120px
+				.story
+					min-height: 120px
+					width: 100%
+					display: flex
+					flex-wrap: wrap
+					justify-content: space-between
+					align-content: space-around
+					align-items: center
+					.storyText
+						width: 600px
+						color: #ffffff
+						font-family: "PT Serif"
+						font-size: 20px
+						font-weight: 400
+						line-height: 28px
+						letter-spacing: -0.4px
+						text-align: left
+					.storyBtn
+						width: 269px;
+						height: 64px;
+						background-color: $clr3;
+						border-radius: 5px
+						color: $clr2
+						font-family: Montserrat
+						font-size: 22px
+						font-weight: 400
+						line-height: 28px
+						letter-spacing: -0.44px
+						border: none
+					.storyBtn:hover
+						cursor: pointer
+						box-shadow: 0 0 5px 2px $clr3
 
 .sec2
 	min-height: 537px
@@ -315,40 +389,42 @@ header
 			line-height: 28px
 			letter-spacing: -0.44px
 			margin-top: 32px
-		.pricePrice
-			color: $clr1
-			font-size: 60px
-			font-weight: 700
-			line-height: 80px
-			letter-spacing: -1.2px
-			margin: 16px auto
-		.pPrice
-			color: $clr2
-			font-family: "PT Serif"
-			font-size: 20px
-			font-weight: 400
-			line-height: 28px
-			letter-spacing: -0.4px
-		.priceBtn
-			width: 205px
-			height: 49px
-			background-color: #e3d5b8
-			margin: 0 auto
-			display: flex
-			align-items: center
-			justify-content: center
-			color: $clr2
-			font-size: 22px
-			font-weight: 400
-			line-height: 28px
-			letter-spacing: -0.44px
-			border-radius: 5px
-			margin-top: 18px
-		.priceBtn:hover
-			background-color: $clr1
-			color: #fff
-			cursor: pointer
-			box-shadow: 2px 2px 3px 2px $clr3
+		ul
+			list-style: none
+			.pricePrice
+				color: $clr1
+				font-size: 60px
+				font-weight: 700
+				line-height: 80px
+				letter-spacing: -1.2px
+				margin: 16px auto
+			.pPrice
+				color: $clr2
+				font-family: "PT Serif"
+				font-size: 20px
+				font-weight: 400
+				line-height: 28px
+				letter-spacing: -0.4px
+			.priceBtn
+				width: 205px
+				height: 49px
+				background-color: #e3d5b8
+				margin: 0 auto
+				display: flex
+				align-items: center
+				justify-content: center
+				color: $clr2
+				font-size: 22px
+				font-weight: 400
+				line-height: 28px
+				letter-spacing: -0.44px
+				border-radius: 5px
+				margin-top: 18px
+			.priceBtn:hover
+				background-color: $clr1
+				color: #fff
+				cursor: pointer
+				box-shadow: 2px 2px 3px 2px $clr3
 	.priceBlock:hover
 		box-shadow: 0 0 3px 2px #fff
 	.forCorner
@@ -471,33 +547,40 @@ header
 footer
 	background-color: $clr2
 	min-height: 170px
-	width: 100%
-	display: flex
-	align-items: center
-	// .container
-	// 	margin-top: 40px
-	.contain
-		display: flex
-		justify-content: space-between
-		margin-top: 10px
-	.copyRight
-		color: #ffffff
-		font-family: "PT Serif"
-		font-size: 20px
-		font-weight: 400
-		line-height: 22px
-		letter-spacing: -0.4px
-		a
-			text-decoration: none
-			color: $clr1
-	.footLogo
-		color: $clr1
-		font-family: "Quite Chocolatey"
-		font-size: 64px
-		font-weight: 400
-		line-height: 23.6px
-		letter-spacing: -1.2px
-		margin-top: 20px
+	.container
+		min-height: 170px
+		.contain
+			min-height: 170px
+			display: flex
+			justify-content: space-between
+			flex-wrap: nowrap
+			align-content: center
+			.copyRight
+				width: 1000px
+				height: 170px
+				color: #ffffff
+				font-family: "PT Serif"
+				font-size: 20px
+				font-weight: 400
+				line-height: 22px
+				letter-spacing: -0.4px
+				display: flex
+				align-items: center
+				transform: translateY(-15px)
+				a
+					text-decoration: none
+					color: $clr1
+			.footLogo
+				display: flex
+				align-items: center
+				height: 170px
+				width: 98px
+				margin-bottom: 10px
+				img
+					width: 98px
+					height: 46px
+
+
 
 
 @media screen and ( max-width: 1024px )
@@ -505,6 +588,7 @@ footer
 		width: 90%
 	.headContent
 		justify-content: center !important
+		flex-wrap: wrap
 	.sloganBlock
 		margin-bottom: 100px
 	.slogan
@@ -534,12 +618,19 @@ footer
 	.galBlocks
 		justify-content: center !important
 		
-	footer .contain
-		justify-content: center !important
+	footer .container .contain
+		flex-wrap: wrap-reverse
+		justify-content: center
 	.copyRight
-		width: 900px
+		height: 60px !important
+		display: block !important
+		text-align: center
+		transform: none !important
 	.footLogo
-		margin-top: 40px !important
+		margin-top: 20px
+		height: 60px !important
+		width: 100%
+		justify-content: center
 
 
 @media screen and ( max-width: 768px )
@@ -547,67 +638,57 @@ footer
 		width: 100%
 	.contain
 		width: 95%
-  .line 
-    width: 40px
-    height: 5px
-    background: $clr2
-    margin: 5px
-  nav
-    position: relative
-	.hamburger 
+	nav
 		position: absolute
-		cursor: pointer
-		right: 5%
-		top: 50%
-		transform: translate(-5%, -50%)
-		z-index: 3
+		top: 200px
+		left: 100px
+		width: 150px
 	.nav-links
-		top: -800px
-		left: 0
 		position: fixed
-		background: rgba(360, 360, 360, 0.7)
-		height: 100%
-		width: 100%
-		flex-direction: column
-		// clip-path: circle(0 at 90% -10%)
-		// -webkit-clip-path: circle(0 at 90% -10%)
-		// transform: translateX(30px)
-		transition: all 0.5s ease-out
-		pointer-events: none
-		opacity: 1
-	.nav-links.open
-		// clip-path: circle(1000px at 90% -10%)
-		// -webkit-clip-path: circle(1000px at 90% -10%)
-		// transform: translateX(0)
-		top: 0
-		pointer-events: all
-	.landing 
-		flex-direction: column
-	.nav-links li 
-		flex-grow: 1
-		display: flex
+		top: -1000px
+		left: 0
+		flex-wrap: wrap
+		align-content: start
 		justify-content: center
-		align-items: center
-	.nav-links li a
-		background-color: #fffbe7
-		font-size: 20px !important
-		font-weight: 600 !important
-		width: 180px !important
-	.nav-links li:nth-child(1) 
-		transition: all 0.5s ease 0.1s
-	.nav-links li:nth-child(2) 
-		transition: all 0.5s ease 0.2s
-	.nav-links li:nth-child(3) 
-		transition: all 0.5s ease 0.3s
-	.nav-links li:nth-child(4) 
-		transition: all 0.5s ease 0.4s
-	.nav-links li:nth-child(5) 
-		transition: all 0.5s ease 0.5s
-	li.fade 
-		opacity: 1
+		background: rgba(360, 360, 360, 0.7)
+		backdrop-filter: blur(4px)
+		transition: 500ms
+	.nav-links li
+		width: 670px
+		margin-top: 30px
+	.burgerWrap
+		position: absolute
+		top: 30px
+		right: 50px
+		width: 30px
+		height: 26px
+		cursor: pointer
+		z-index: 2
+	.burger
+		opacity: 1 !important
+		transition: none !important
+	
+	.open
+		top: 0
+		transition: 500ms
 
+	.active
+		top: 10px !important
+		left: 0 !important
+		transform: rotate(405deg)
+		opacity: 1 !important
+
+	.active:after
+		top: 0 !important
+		left: 0 !important
+		left: -20px
+
+	.active:before
+		top: 0 !important
+		left: 0 !important
+		transform: rotate(90deg)
+		left: -30px
   
-
 	.slogan
 		font-size: 60px !important
 
@@ -645,3 +726,7 @@ footer
 @media screen and ( max-width: 320px )
 	.nav-links li a
 		transform: translate(-20px, 10px)
+
+
+
+	
