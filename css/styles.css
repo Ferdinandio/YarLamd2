@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
 body {
   min-width: 320px;
   overflow-x: hidden;
@@ -88,6 +86,7 @@ header .top {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 header .top .logo {
@@ -106,7 +105,7 @@ header .top .burger, header .top .active {
   top: 10px;
   width: 30px;
   height: 3px;
-  background: #161616;
+  background: #000000;
   opacity: 0;
   -webkit-transition: 500ms;
   transition: 500ms;
@@ -119,7 +118,7 @@ header .top .burger:after, header .top .active:after {
   right: 0;
   width: 30px;
   height: 3px;
-  background-color: #161616;
+  background-color: #000000;
 }
 
 header .top .burger:before, header .top .active:before {
@@ -129,7 +128,7 @@ header .top .burger:before, header .top .active:before {
   right: 0;
   width: 30px;
   height: 3px;
-  background-color: #161616;
+  background-color: #000000;
 }
 
 header .top nav {
@@ -157,14 +156,14 @@ header .top nav .nav-links {
 header .top nav .nav-links li a {
   padding: 10px;
   margin-left: 7px;
-  color: #161616;
+  color: #000000;
   border-radius: 5px;
   text-decoration: none;
   color: inherit;
   font-family: "Montserrat";
   font-style: normal;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 22px;
   letter-spacing: -0.36px;
 }
@@ -192,7 +191,7 @@ header .headContent .sloganBlock {
   width: 470px;
   height: 268px;
   margin-right: 25px;
-  color: #161616;
+  color: #000000;
   opacity: 0.99;
 }
 
@@ -332,12 +331,17 @@ header .headContent .form .inputs {
   letter-spacing: -0.4px;
   text-align: left;
   padding-left: 19px;
+  padding-right: 22px;
+}
+
+header .headContent .form .inputs::-ms-clear {
+  display: none;
 }
 
 header .headContent .form .btnForm {
   width: 88%;
   height: 57px;
-  background-color: #161616;
+  background-color: #000000;
   color: #ffffff;
   font-size: 22px;
   font-weight: 400;
@@ -361,7 +365,7 @@ header .headContent .form .btnForm:hover {
 .sec1 .block1 {
   width: 100%;
   height: 127px;
-  color: #161616;
+  color: #000000;
   font-family: Couture;
   font-size: 50px;
   font-weight: 700;
@@ -427,7 +431,7 @@ header .headContent .form .btnForm:hover {
 
 .sec1 .block2 .serveBlock .serveText {
   width: 180px;
-  color: #161616;
+  color: #000000;
   font-family: "PT Serif";
   font-size: 20px;
   font-weight: 400;
@@ -489,10 +493,10 @@ header .headContent .form .btnForm:hover {
   height: 64px;
   background-color: #e3d5b8;
   border-radius: 5px;
-  color: #161616;
+  color: #000000;
   font-family: Montserrat;
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px;
   letter-spacing: -0.44px;
   border: none;
@@ -535,7 +539,7 @@ header .headContent .form .btnForm:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #1f1f1f;
+  color: #000000;
   font-family: Montserrat;
   font-size: 50px;
   font-weight: 700;
@@ -554,7 +558,7 @@ header .headContent .form .btnForm:hover {
 }
 
 .sec2 .priceBlock .priceBlockTitle {
-  color: #161616;
+  color: #000000;
   font-family: "PT Serif";
   font-size: 22px;
   font-weight: 400;
@@ -577,7 +581,7 @@ header .headContent .form .btnForm:hover {
 }
 
 .sec2 .priceBlock ul .pPrice {
-  color: #161616;
+  color: #000000;
   font-family: "PT Serif";
   font-size: 20px;
   font-weight: 400;
@@ -599,7 +603,7 @@ header .headContent .form .btnForm:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #161616;
+  color: #000000;
   font-size: 22px;
   font-weight: 400;
   line-height: 28px;
@@ -669,7 +673,7 @@ header .headContent .form .btnForm:hover {
 
 .sec3 .testiGal .testi .testiTitle {
   height: 67px;
-  color: #161616;
+  color: #000000;
   font-size: 50px;
   font-weight: 700;
   line-height: 50px;
@@ -698,7 +702,7 @@ header .headContent .form .btnForm:hover {
   text-align: left;
   margin-left: 20px;
   padding-top: 10px;
-  color: #161616;
+  color: #000000;
   font-family: "PT Serif";
   font-size: 20px;
   font-weight: 400;
@@ -799,7 +803,7 @@ header .headContent .form .btnForm:hover {
 }
 
 footer {
-  background-color: #161616;
+  background-color: #000000;
   min-height: 170px;
 }
 
@@ -1038,6 +1042,9 @@ footer .container .contain .footLogo img {
 }
 
 @media screen and (max-width: 480px) {
+  .sloganBlock {
+    margin-left: 15px;
+  }
   .slogan {
     font-size: 50px !important;
   }
@@ -1060,6 +1067,13 @@ footer .container .contain .footLogo img {
   }
   .hamburger {
     margin-top: -20px;
+  }
+  .contain {
+    width: 85%;
+    margin-left: 15px;
+  }
+  .burgerWrap {
+    right: 30px;
   }
 }
 
